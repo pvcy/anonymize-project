@@ -1,13 +1,38 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Privacy Dynamics Github Action'
+description: 'Trigger a Job Run in a pre-configured Project in your Privacy Dynamics account'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  project-id:
+    description: 'ID of PD Project configured to anonymize data for this instance of the Github Action'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  db-host:
+    description: 'Hostname of Postgresql engine to send anonymized data to. Must be made accessible to GH Actions runner.'
+    required: false
+    default: 'localhost'
+  db-port:
+    description: 'Port of Postgresql engine to send anonymized data to.'
+    required: false
+    default: '5432'
+  db-username:
+    description: 'Username of Postgresql engine to send anonymized data to.'
+    required: true
+  db-password:
+    description: 'Password of Postgresql engine to send anonymized data to.'
+    required: true
+  client-id:
+    description: 'M2M Client ID provided from your Privacy Dynamics account'
+    required: true
+  client-secret:
+    description: 'Client secret provided from your Privacy Dynamics account'
+    required: true
+  api-url:
+    description: 'API Url for Privacy Dynamics. Defaults to SaaS instance.'
+    required: false
+  oauth-domain:
+    description: 'Domain in which to retrieve an access token. For testing purposes only'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'
+branding:
+  color: 'black'
+  icon: 'shield'

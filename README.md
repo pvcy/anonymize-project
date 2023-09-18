@@ -28,16 +28,16 @@ jobs:
   anonymize:
   runs-on: ubuntu-latest
   steps:
-  - name: Anonymize Data
-    uses: pvcy/anonymize-project@latest
-  with:
-    project-id: 4e1213f4-my-project-uuid-0242ac120002
-    db-host: my_postgres_host.host.com
-    db-port: 5432
-    db-username: postgres_username
-    db-password: postgres_password
-    client-id: ClientIDFromYourPDAccount
-    client-secret: ClientSecretFromYourPDAccount
+    - name: Anonymize Data
+      uses: pvcy/anonymize-project@latest
+      with:
+        project-id: 4e1213f4-my-project-uuid-0242ac120002
+        db-host: my_postgres_host.host.com
+        db-port: 5432
+        db-username: postgres_username
+        db-password: postgres_password
+        client-id: ClientIDFromYourPDAccount
+        client-secret: ClientSecretFromYourPDAccount
 ```
 
 # Configuration Parameters

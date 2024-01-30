@@ -11,7 +11,7 @@ This action requires the following:
 * An active Privacy Dynamics account. Don't have one? You can get one [here](https://signup.privacydynamics.io/).
 * Source data stored in a Postgresql, accessible to the Privacy Dynamics service.
 * A configured Project within your Privacy Dynamics account using your Postgresql data source as a Origin Connection.
-* Machine-to-machine credentials for your account. [Contact us](mailto:support@privacydynamics.io) so we can generate those for you.
+* Machine-to-machine (API) credentials for your account. You can generate the required client ID and secret within the web UI.
 
 # Usage
 
